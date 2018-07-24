@@ -14,7 +14,7 @@
         passwordVariable: "PASS"
     )]) {
         sh """sudo docker login \
-        -u $USER -p $PASS"""
+        -u $USER -p '$PASS'"""
     }
     sh """sudo docker image push \
         ${image}:${currentBuild.displayName}"""
